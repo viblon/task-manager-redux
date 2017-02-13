@@ -28,14 +28,15 @@ import React, { Component } from 'react';
 import TodoBanner from './TodoBanner';
 import TodoList from './TodoList'
 import AddTodo from '../containers/TodoForm'
+//import VisibleTodoList from '../containers/VisibleTodoList'
 
 
 export default class App extends Component {
   render() {
     return (
-      <div>
+      <div style={{ width: 173}}>
         <TodoBanner/>
-				<TodoList />
+        <TodoList />
 				<AddTodo />
       </div>
     );

@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 import todos from './todos'
 
-const todoApp = combineReducers({
+const todoApp = combineReducers({ //на будущее, подключать редьюсеры
   todos
 })
 

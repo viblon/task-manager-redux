@@ -14,7 +14,10 @@ import React, { PropTypes } from 'react'
 
 const Todo = ({ text }) => (
   <li>
-    {text}
+   {text}
+    <button style={{float:"right"}}>
+      Х
+    </button>
   </li>
 )
 

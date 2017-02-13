@@ -16,16 +16,17 @@ module.exports = TodoList;*/
 
 import React, { PropTypes } from 'react'
 import Todo from './TodoListItem'
+import { connect } from 'react-redux'
 
-const TodoList = ({ todos }) => (
-  <ul>
+let TodoList = ({ todos }) => (
+  <ol className="bullet">
     {todos.map(todo =>
       <Todo
         key={todo.id}
         {...todo}
       />
     )}
-  </ul>
+  </ol>
 )
 
 TodoList.propTypes = {
@@ -34,5 +35,13 @@ TodoList.propTypes = {
     text: PropTypes.string.isRequired
   }).isRequired).isRequired
 }
+
+const mapStateToProps = (state) => ({
+  todos: state.todos
+})
+
+TodoList = connect(
+  mapStateToProps
+)(TodoList)
 
 export default TodoList
