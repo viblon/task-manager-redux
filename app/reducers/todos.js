@@ -5,6 +5,10 @@ const todo = (state, action) => {
         id: action.id,
         text: action.text
       }
+    case 'DEL_TODO':
+      return {
+        id: action.id,
+      }
 
     default:
       return state
@@ -18,6 +22,10 @@ const todos = (state = [], action) => {
         ...state,
         todo(undefined, action)
       ]
+    case 'DEL_TODO':
+      return state.filter(todo =>
+        todo.id !== action.id
+      )
 
     default:
       return state

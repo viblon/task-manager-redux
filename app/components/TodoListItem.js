@@ -12,17 +12,19 @@ module.exports = TodoListItem;*/
 
 import React, { PropTypes } from 'react'
 
-const Todo = ({ text }) => (
+const Todo = ({ todo, text, delTodo }) => (
   <li>
    {text}
-    <button style={{float:"right"}}>
+    <button style={{float:"right"}} onClick={() => delTodo(todo.id)} >
       Х
     </button>
   </li>
 )
 
 Todo.propTypes = {
-  text: PropTypes.string.isRequired
+  todo: PropTypes.object.isRequired,
+  text: PropTypes.string.isRequired,
+  delTodo: PropTypes.func.isRequired
 }
 
 export default Todo
