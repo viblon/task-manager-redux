@@ -13,12 +13,13 @@ import { Provider } from 'react-redux'
 import App from './components/App'
 import reducer from './reducers'
 
+import router from './router';
+
 const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
-console.info(store.getState());
 
 render(
   <Provider store={store}>
-    <App />
+    {router}
   </Provider>,
   document.getElementById('app')
 )

@@ -36,7 +36,7 @@ let AddTodo = ({ addTodo}) => {
   let input
 
   return (
-    <div>
+    <div className="banner">
       <form onSubmit={e => {
         e.preventDefault()
         if (!input.value.trim()) {
@@ -47,7 +47,7 @@ let AddTodo = ({ addTodo}) => {
       }}>
         <input ref={node => {	//что это?
           input = node
-        }} />
+        }} /><br/>
         <input type='submit' value='Добавить'/>
       </form>
     </div>

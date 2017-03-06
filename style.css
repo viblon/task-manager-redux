@@ -12,6 +12,8 @@ border-radius: 4px;
 background: #FEFEFE;
 color: #231F20;
 font-family: "Trebuchet MS", "Lucida Sans";
+right: 20px;
+text-align: left;
 }
 .bullet li:before {
 position: absolute;
@@ -25,4 +27,9 @@ background: #FEFEFE;
 border-radius: 50%;
 counter-increment: li;
 content: counter(li);
+}
+.banner{
+text-align: center;;
+background:lightblue;
+color:darkred
 }

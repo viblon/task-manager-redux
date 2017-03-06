@@ -9,12 +9,13 @@ var TodoListItem = React.createClass({
 });
 
 module.exports = TodoListItem;*/
+import { Link } from 'react-router';
 
 import React, { PropTypes } from 'react'
 
 const Todo = ({ todo, text, delTodo }) => (
-  <li>
-   {text}
+  <li><Link to="profile" activeClassName="active">
+   {text}</Link>
     <button style={{float:"right"}} onClick={() => delTodo(todo.id)} >
       Х
     </button>

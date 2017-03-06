@@ -34,8 +34,8 @@ import AddTodo from '../containers/TodoForm'
 export default class App extends Component {
   render() {
     return (
-      <div style={{ width: 173}}>
-        <TodoBanner/>
+      <div className="banner" style={{ width: 300}}>
+        
         <TodoList />
 				<AddTodo />
       </div>

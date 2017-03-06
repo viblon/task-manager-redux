@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
-export default class App extends Component {
+export default class TodoBanner extends Component {
 	render(){
+
 		return (
-			<h3 style={{ background: 'lightblue', color: 'darkred'}}>Всего задач:</h3>
+			<div className="banner" style={{ width: 300}}>
+				<h3 className="banner">
+					<Link to="/" activeClassName="active">Список задач:</Link>
+				</h3>
+				<main>
+								{this.props.children}
+				</main>
+			</div>
 		);
 	}
 }
