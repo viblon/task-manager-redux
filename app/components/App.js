@@ -26,17 +26,17 @@ module.exports = TodoApp;*/
 
 import React, { Component } from 'react';
 import TodoBanner from './TodoBanner';
-import TodoList from './TodoList'
+//import TodoList from './TodoList'
 import AddTodo from '../containers/TodoForm'
-//import VisibleTodoList from '../containers/VisibleTodoList'
+import VisibleTodoList from '../containers/VisibleTodoList'
 
 
 export default class App extends Component {
   render() {
     return (
       <div className="banner" style={{ width: 300}}>
-        
-        <TodoList />
+
+        <VisibleTodoList />
 				<AddTodo />
       </div>
     );

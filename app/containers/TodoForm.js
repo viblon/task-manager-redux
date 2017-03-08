@@ -28,13 +28,14 @@ var TodoForm = React.createClass({
 
 module.exports = TodoForm;*/
 
-import React from 'react'
+import React,{ Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../actions'
+import { bindActionCreators } from 'redux'
 
 let AddTodo = ({ addTodo}) => {
-  let input
 
+  let input
   return (
     <div className="banner">
       <form onSubmit={e => {
@@ -54,8 +55,11 @@ let AddTodo = ({ addTodo}) => {
   )
 }
 
-const mapDispatchToProps =  ({
-  addTodo: addTodo
+AddTodo.propTypes = {
+  addTodo: PropTypes.func.isRequired
+}
+const mapDispatchToProps = dispatch => ({
+  addTodo: bindActionCreators(addTodo, dispatch)
 })
 
 AddTodo = connect(null, mapDispatchToProps)(AddTodo)

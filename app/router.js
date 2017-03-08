@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TodoBanner from './components/TodoBanner';
 import TodoList from './components/TodoList'
-import Profile from './components/Profile'
+import Profile from './containers/Profile'
 import AddTodo from './containers/TodoForm'
 import VisibleTodoList from './containers/VisibleTodoList'
 import App from './components/App';

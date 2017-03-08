@@ -16,8 +16,8 @@ module.exports = TodoList;*/
 
 import React, { PropTypes } from 'react'
 import Todo from './TodoListItem'
-import { connect } from 'react-redux'
-import { delTodo } from '../actions'
+//import { connect } from 'react-redux'
+// import { delTodo } from '../actions'
 
 let TodoList = ({ todos, delTodo }) => (
   <ol className="bullet">
@@ -39,17 +39,17 @@ TodoList.propTypes = {
   }).isRequired).isRequired
 }
 
-const mapStateToProps = (state) => ({
-  todos: state.todos
-})
-
-const mapDispatchToProps =  ({
-  delTodo: delTodo
-})
-
-TodoList = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(TodoList)
+// const mapStateToProps = (state) => ({
+//   todos: state.todos
+// })
+//
+// const mapDispatchToProps =  ({
+//   delTodo: delTodo
+// })
+//
+// TodoList = connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// )(TodoList)
 
 export default TodoList

@@ -14,8 +14,8 @@ import { Link } from 'react-router';
 import React, { PropTypes } from 'react'
 
 const Todo = ({ todo, text, delTodo }) => (
-  <li><Link to="profile" activeClassName="active">
-   {text}</Link>
+  <li><Link to={"/"+ todo.id} activeClassName="active">
+   {todo.text}</Link>
     <button style={{float:"right"}} onClick={() => delTodo(todo.id)} >
       Х
     </button>
