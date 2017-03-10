@@ -65,3 +65,33 @@ const mapDispatchToProps = dispatch => ({
 AddTodo = connect(null, mapDispatchToProps)(AddTodo)
 
 export default AddTodo
+
+// 
+// class AddTodo extends Component{
+//
+// state :{text: 'efef'||''}
+//
+//   handleChange (e) {
+//     this.setState({ text: e.target.value })
+//   }
+//
+//   handleSubmit (e) {
+//     e.preventDefault()
+//     if (!this.state.text.trim()) {
+//       return
+//     }
+//     this.props.addTodo(this.state.text)
+//     this.setState({ text: '' })
+//   }
+// render(){
+//   //let input
+//   return (
+//     <div className="banner">
+//       <form onSubmit={this.handleSubmit} >
+//         <input  value = {this.state.text}/><br/>
+//         <input type='submit' value='Добавить'/>
+//       </form>
+//     </div>
+//   )
+// }
+// }
