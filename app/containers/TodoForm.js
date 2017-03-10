@@ -66,10 +66,15 @@ AddTodo = connect(null, mapDispatchToProps)(AddTodo)
 
 export default AddTodo
 
-// 
 // class AddTodo extends Component{
 //
-// state :{text: 'efef'||''}
+//   constructor(props) {
+//     super(props);
+//     fetchTasks();
+//     this.state = {
+//       text: 'efef'
+//     }
+//   }
 //
 //   handleChange (e) {
 //     this.setState({ text: e.target.value })
