@@ -9,6 +9,11 @@ const todo = (state, action) => {
       return {
         id: action.id,
       }
+    case 'SET_TODO':
+      return {
+        id: action.id,
+        text: action.text
+      }
 
     default:
       return state
@@ -26,6 +31,11 @@ const todos = (state = [], action) => {
       return state.filter(todo =>
         todo.id !== action.id
       )
+    case 'SET_TODO':
+      let newstate = state
+      debugger;
+      newstate[action.id].text = action.text
+      return newstate
 
     default:
       return state

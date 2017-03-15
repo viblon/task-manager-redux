@@ -1,6 +1,9 @@
 import React, { Component,PropTypes } from 'react';
 //import { Link } from 'react-router';
 import { connect } from 'react-redux'
+import { setTodo } from '../actions'
+import { bindActionCreators } from 'redux'
+
 class Profile extends Component{
 	//console.log(this.props.params.profileId)
 	// static propTypes = {
@@ -14,11 +17,21 @@ class Profile extends Component{
 			text: this.props.todos[this.props.params.profileId].text||''
 		}
 		this.handleChange = this.handleChange.bind(this);
-		//this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 	handleChange(e){
 		this.setState({ text: e.target.value })
 	}
+
+	handleSubmit (e) {
+    e.preventDefault()
+    if (!this.state.text.trim()) {
+      return
+    }
+		this.props.setTodo(this.props.params.profileId ,this.state.text)
+		//this.setState({ text: '' })
+	}
+
 render(){
 	return(
 		<div>
@@ -33,16 +46,18 @@ render(){
 
 
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   todos: state.todos
 })
-
+const mapDispatchToProps = dispatch => ({
+  setTodo: bindActionCreators(setTodo, dispatch)
+})
 // const mapDispatchToProps =  ({
 //   delTodo: delTodo
 // })
 
 Profile = connect(
-  mapStateToProps
+  mapStateToProps, mapDispatchToProps
 )(Profile)
 
 export default Profile

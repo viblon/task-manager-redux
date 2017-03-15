@@ -10,7 +10,8 @@ export const delTodo = (id) => ({
   id
 })
 
-export const setTodo = (id) => ({
+export const setTodo = (id, text) => ({
   type: 'SET_TODO',
-  id
+  id,
+  text
 })
